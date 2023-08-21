@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}My Checklists{% endblock title %}
+
+{% block content %}
+  <h1>My Checklists</h1>
+  <h3>Here is the list of pending checklists</h3>
+  <p>
+    Fill them up before they expire.
+  </p>
+  <table class="table">
+    <thead></thead>
+    <tbody>
+        {% for checklist in checklist_instances %}
+        <tr>
+            <td>{{checklist.checklist.title}}</td>
+            <td>{{checklist.checklist.description}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}
